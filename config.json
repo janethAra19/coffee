@@ -1,0 +1,118 @@
+{
+  "sistema": {
+    "nombre": "Sistema de Gestión y Ventas - Cafetería",
+    "version": "1.0.0",
+    "fecha_creacion": "2026-02-01",
+    "autor": "Sistema de Ventas"
+  },
+  
+  "configuracion_general": {
+    "nombre_negocio": "Cafetería El Aroma",
+    "rfc": "CAFE123456ABC",
+    "direccion": "Av. Principal #123, Villahermosa, Tabasco",
+    "telefono": "(993) 123-4567",
+    "email": "contacto@cafeteriaelaroma.com",
+    "horario": "Lunes a Domingo 7:00 AM - 10:00 PM"
+  },
+  
+  "inventario": {
+    "stock_minimo_alerta": 10,
+    "stock_critico_alerta": 5,
+    "actualizar_automatico": true,
+    "archivo_respaldo": "inventario_cafeteria.csv"
+  },
+  
+  "ventas": {
+    "contador_inicial": 1000,
+    "aplicar_iva": false,
+    "porcentaje_iva": 16,
+    "descuento_maximo_permitido": 30,
+    "generar_ticket_automatico": true,
+    "guardar_tickets": true,
+    "carpeta_tickets": "tickets",
+    "carpeta_reportes": "reportes"
+  },
+  
+  "reportes": {
+    "formato_fecha": "%d/%m/%Y",
+    "formato_hora": "%H:%M:%S",
+    "generar_diario": true,
+    "generar_semanal": true,
+    "generar_mensual": true,
+    "guardar_automatico": true
+  },
+  
+  "categorias_productos": [
+    "Bebidas Calientes",
+    "Bebidas Frías",
+    "Panadería",
+    "Repostería",
+    "Desayunos",
+    "Comidas",
+    "Extras"
+  ],
+  
+  "cajeros": [
+    "Cajero Principal",
+    "María González",
+    "Carlos Ruiz",
+    "Ana Martínez",
+    "Luis Hernández"
+  ],
+  
+  "sistema_archivos": {
+    "usar_csv": true,
+    "usar_json": false,
+    "carpeta_datos": "datos",
+    "carpeta_respaldos": "respaldos",
+    "crear_respaldo_diario": true
+  },
+  
+  "interfaz": {
+    "ancho_consola": 80,
+    "mostrar_logo": true,
+    "mostrar_ayuda": true,
+    "color_exito": "verde",
+    "color_error": "rojo",
+    "color_advertencia": "amarillo"
+  },
+  
+  "seguridad": {
+    "requiere_autenticacion": false,
+    "tiempo_sesion_minutos": 480,
+    "cerrar_sesion_automatico": false,
+    "registrar_log_actividades": true,
+    "archivo_log": "sistema.log"
+  },
+  
+  "notificaciones": {
+    "alertas_stock_bajo": true,
+    "alertas_vencimientos": false,
+    "resumen_diario": true,
+    "enviar_email": false
+  },
+  
+  "moneda": {
+    "simbolo": "$",
+    "codigo": "MXN",
+    "nombre": "Peso Mexicano",
+    "decimales": 2
+  },
+  
+  "modulos_activos": {
+    "gestion_productos": true,
+    "sistema_ventas": true,
+    "historial_ventas": true,
+    "reportes": true,
+    "inventario": true,
+    "tickets": true,
+    "estadisticas": true
+  },
+  
+  "rutas": {
+    "productos": "sistema_gestion_productos.py",
+    "ventas": "sistema_ventas_cafeteria.py",
+    "main": "main.py",
+    "config": "config.json"
+  }
+}
