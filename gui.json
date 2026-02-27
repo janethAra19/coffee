@@ -1,0 +1,59 @@
+{
+  "app": {
+    "nombre": "Cafetería El Aroma - GUI",
+    "version": "2.0.0",
+    "fecha_creacion": "2026-02-26",
+    "db_path": "gui.db"
+  },
+  "ventana": {
+    "titulo": "☕ Cafetería El Aroma - Sistema de Ventas",
+    "ancho": 1100,
+    "alto": 700,
+    "resizable": true,
+    "tema": "clam"
+  },
+  "negocio": {
+    "nombre": "Cafetería El Aroma",
+    "rfc": "CAFE123456ABC",
+    "direccion": "Av. Principal #123, Villahermosa, Tabasco",
+    "telefono": "(993) 123-4567",
+    "moneda": "$",
+    "codigo_moneda": "MXN"
+  },
+  "colores": {
+    "primario": "#4A90D9",
+    "secundario": "#F5A623",
+    "fondo": "#F0F0F0",
+    "exito": "#27AE60",
+    "error": "#E74C3C",
+    "advertencia": "#F39C12",
+    "texto_oscuro": "#2C3E50",
+    "blanco": "#FFFFFF"
+  },
+  "inventario": {
+    "stock_minimo_alerta": 10,
+    "stock_critico_alerta": 5
+  },
+  "ventas": {
+    "contador_inicial": 2000,
+    "aplicar_iva": false,
+    "porcentaje_iva": 16,
+    "descuento_maximo": 30
+  },
+  "cajeros": [
+    "Cajero Principal",
+    "María González",
+    "Carlos Ruiz",
+    "Ana Martínez",
+    "Luis Hernández"
+  ],
+  "categorias": [
+    "Bebidas Calientes",
+    "Bebidas Frías",
+    "Panadería",
+    "Repostería",
+    "Desayunos",
+    "Comidas",
+    "Extras"
+  ]
+}

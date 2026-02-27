@@ -544,6 +544,12 @@ class SistemaPOS:
                 
                 # Agregar al historial
                 self.historial.agregar_venta(self.venta_actual)
+
+                             # ── GUARDAR EN SQLITE ─────────────────────────── NUEVO
+                if hasattr(self, 'db') and self.db:
+                    self.db.guardar_venta(self.venta_actual)
+                # ─────────────────────────────────────────────────────
+
                 self.venta_actual = None
         else:
             print("Venta no confirmada")

@@ -11,6 +11,7 @@ import os
 import sys
 import json
 from datetime import datetime
+from database import BaseDatos, inicializar_base_de_datos
 
 # Importar módulos del sistema
 try:
@@ -138,9 +139,16 @@ class SistemaIntegrado:
         if contador_inicial:
             Venta.contador_ventas = contador_inicial
         print(f"   ✓ Sistema POS listo (Contador inicial: {Venta.contador_ventas})")
+
+          # ── BASE DE DATOS SQLITE ──────────────────────────────── NUEVO
+        print("\n3. Inicializando base de datos SQLite...")
+        self.db = inicializar_base_de_datos(self.gestor_productos)
+        self.db.sincronizar_stock_a_gestor(self.gestor_productos)
+        self.sistema_pos.db = self.db
+        # ─────────────────────────────────────────────────────────────
         
         # Crear directorios necesarios
-        print("\n3. Verificando directorios...")
+        print("\n4. Verificando directorios...")
         self.crear_directorios()
         
         self.inicializado = True
@@ -453,7 +461,15 @@ def menu_principal_integrado():
             if guardar.lower() == 's':
                 sistema.gestor_productos.guardar_csv()
                 sistema.sistema_pos.historial.guardar_csv()
+
+                            # ── GUARDAR STOCK FINAL Y CERRAR BD ──────────────── NUEVO
+            sistema.db.sincronizar_productos_desde_gestor(
+                sistema.gestor_productos
+            )
+            sistema.db.cerrar()
+            # ─────────────────────────────────────────────────────────
             
+
             print("\n" + "╔" + "="*68 + "╗")
             print("║" + " "*68 + "║")
             print("║" + "¡Gracias por usar el Sistema Integrado!".center(68) + "║")
